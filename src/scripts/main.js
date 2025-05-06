@@ -2,8 +2,8 @@
 
 const treeListElement = document.querySelector('.tree');
 
-treeListElement.querySelectorAll('li').forEach((li) => {
-  li.childNodes.forEach((node) => {
+treeListElement.querySelectorAll('li').forEach(li => {
+  li.childNodes.forEach(node => {
     if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
       const span = document.createElement('span');
 
@@ -14,14 +14,14 @@ treeListElement.querySelectorAll('li').forEach((li) => {
   });
 });
 
-treeListElement.addEventListener('click', (e) => {
-  const listElement = e.target.closest('li');
+treeListElement.addEventListener('click', e => {
+  const spanElement = e.target.closest('span');
 
-  if (!listElement) {
+  if (!spanElement) {
     return;
   }
 
-  const innerListElement = listElement.querySelector('ul');
+  const innerListElement = spanElement.nextSibling;
 
   if (!innerListElement) {
     return;
