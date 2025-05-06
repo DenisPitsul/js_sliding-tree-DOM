@@ -1,0 +1,2 @@
+var e=document.querySelector(".tree");e.querySelectorAll("li").forEach(function(e){e.childNodes.forEach(function(t){if(t.nodeType===Node.TEXT_NODE&&""!==t.textContent.trim()){var n=document.createElement("span");n.textContent=t.textContent.trim(),e.prepend(n),e.removeChild(t)}})}),e.addEventListener("click",function(e){var t=e.target.closest("li");if(t){var n=t.querySelector("ul");if(n){var o="block"===getComputedStyle(n).display;n.style.display=o?"none":"block"}}});
+//# sourceMappingURL=index.bcb7785f.js.map
